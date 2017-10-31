@@ -2,7 +2,7 @@
 
 local tArgs = {...}
 
-for trees = 1,tArgs[1] do
+for trees = 1,tArgs[1] or 0 do
 	if turtle.inspect() == 17 or 162 then
 		turtle.dig()
 		turtle.forward()
@@ -15,9 +15,9 @@ for trees = 1,tArgs[1] do
 		end
 		turtle.back()
 	end
-	turtle.select(0)
-	turtle.place()
 	turtle.select(1)
+	turtle.place()
+	turtle.select(2)
 	while turtle.inspect() ~= 17 or 162 do
 		turtle.place()
 	end
